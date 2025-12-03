@@ -37,19 +37,5 @@ jobs:
       run: |
         pytest test_hello_world.py -v
 
-    - name: Run tests with coverage
-      run: |
-        pytest test_hello_world.py --cov=app --cov-report=term-missing
-
-    - name: Generate coverage report
-      if: matrix.python-version == '3.13'
-      run: |
-        pytest test_hello_world.py --cov=app --cov-report=xml
-
-    - name: Upload coverage to artifacts
-      if: matrix.python-version == '3.13'
-      uses: actions/upload-artifact@v4
-      with:
-        name: coverage-report
-        path: coverage.xml
+    
 

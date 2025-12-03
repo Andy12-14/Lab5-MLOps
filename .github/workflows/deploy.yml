@@ -16,7 +16,7 @@ jobs:
     name: Build binary, Docker image and push to DockerHub
     runs-on: ubuntu-latest
     # Only deploy if tests pass
-    needs: []  # In real scenario: needs: [test, lint]
+    needs: [test,lint]  # In real scenario: needs: [test, lint]
 
     steps:
     - name: Checkout code
